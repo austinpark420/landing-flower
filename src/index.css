@@ -1,4 +1,4 @@
-body {
+/* body {
     background-color: rgb(41, 40, 38);
     padding: 20px;
     margin: 0;
@@ -40,4 +40,45 @@ ul.header li a {
 
 .contact-email {
   height: 100px;
+} */
+
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+@font-face {
+  font-family: 'BMJUA';
+  src: url('./font/BMJUA_otf.otf') format('truetype');
+}
+
+* {
+  font-family: 'BMJUA', 'Noto Sans KR', sans-serif;
+}
+
+body, .jumbotron {
+  /* background: #00cc99; */
+  background: #292827;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/*--------------------
+    Header Section
+--------------------*/
+.header-main-component {
+  padding: 2rem 4rem;
+  margin: 0;
+}
+
+/*--------------------
+    Body Section
+--------------------*/
+.body-main-component {
+  /* background: #fff; */
+  padding: 2rem 4rem;
+  /* color: #000; */
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/*--------------------
+    Footer Section
+--------------------*/
+.footer-main-component {
+  padding: 2rem 4rem;
 }
