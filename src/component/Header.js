@@ -5,14 +5,17 @@ class Header extends Component {
   render() {
     return (
       <Jumbotron fluid className="header-main-component">
-        <h1 className="main-title-header">당신의 여자친구는 안녕하신가요?</h1>
-        <div>대한민국 개발자분들 고생 많으십니다</div>
-        <div>개발하느라, 야근하느라, 주말에 출근까지... 많이 바쁘시죠.</div>
-        <div>여러분의 여친분들도 고생이 많으십니다.</div>
-        <div>다른 남친들은 주중에 저녁 데이트도 하고,</div>
-        <div>주말엔 곧 벚꽃 구경도 간다는데...</div>
-        <div>우리 회사는 제품 런칭이 4월이라고 하네요...</div>
-        <div>삐진 여친님을 위해 선물 하나 여친님 직장으로 보내보시죠</div>
+        <h1 className="main-title-header">바쁜 직장인 분들께 드리는 제안</h1>
+        <div className="header-text">
+          <div>이번 주는 팀 회식, 회사 워크샵, 프로젝트로 야근까지..</div>
+          <div>우리나라 직장인 분들 참 고생이 많습니다</div>
+          <div>그런데요, 여러분 못지 않게 애쓰시는 분들이 있죠?</div>
+          <div>여러분들을 항상 이해해주고 응원하는 여러분의 여친님</div>
+          <div>항상 여러분반 바라보시고 걱정 하시는 어머님</div><br />
+          <div>특별한 기념일이 아닌 날, 깜짝 선물을 보내보세요</div>
+          <div>선물 고르러 갈 시간, 쇼핑몰에서 선물 찾는 시간, 택배 배송 시간.. 우린 시간이 많이 없잖아요</div>
+          <div>그래서 다음과 같이 제안을 드립니다</div>
+        </div>
       </Jumbotron>
     );
   }
