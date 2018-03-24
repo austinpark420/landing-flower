@@ -1,22 +1,40 @@
 import React, { Component } from 'react';
-import { Container, Row, Col, Form, Button, Label, Input } from 'reactstrap';
+import PropTypes from 'prop-types';
+import { Container, Row, Col, Button, Label } from 'reactstrap';
+import { reduxForm, Field } from 'redux-form';
+import { connect } from 'react-redux';
+
+// action
+import { sendContactAndFeedback } from '../ducks/contact';
+
+const mapDispatchToProps = dispatch => ({
+  sendContactAndFeedback: values => dispatch(sendContactAndFeedback(values))
+});
 
 class Footer extends Component {
+  static propTypes = {
+    // values
+    handleSubmit: PropTypes.func.isRequired,
+    reset: PropTypes.func.isRequired,
+
+    // actions
+    sendContactAndFeedback: PropTypes.func.isRequired
+  }
+
   constructor() {
     super();
-    this.changeValue = this.changeValue.bind(this);
+    this._onSubmit = this._onSubmit.bind(this);
   }
 
-  state = {
-    value: ''
-  }
-
-  changeValue(value) {
-    this.setState({value});
-    console.log('Hello', this.state.value);
+  _onSubmit(values) {
+    console.log('Hello_submit', values);
+    this.props.sendContactAndFeedback(values);
+    this.props.reset();
   }
 
   render() {
+    const { handleSubmit } = this.props;
+
     return (
       <Container fluid className="footer-main-component">
         <Row>
@@ -31,21 +49,21 @@ class Footer extends Component {
             <div>주소: 서울특별시 동작구 사당로2길 76 1101호</div>
           </Col>
           <Col xs="6" className="contact-request-form">
-            <Form>
-                <Row>
-                  <Col xs="6">
-                    <Label>이름</Label>
-                    <Input type="text"/>
-                  </Col>
-                  <Col xs="6">
-                    <Label>이메일 주소</Label>
-                    <Input type="email" />
-                  </Col>
-                </Row>
-                <Label>메세지</Label>
-                <Input type="textarea" />
-                <Button type="submit">전송하기</Button>
-            </Form>
+            <form onSubmit={handleSubmit(this._onSubmit)}>
+              <Row>
+                <Col xs="6">
+                  <Label>이름</Label>
+                  <Field name="username" component="input" />
+                </Col>
+                <Col xs="6">
+                  <Label>이메일 주소</Label>
+                  <Field name="email" component="input" />
+                </Col>
+              </Row>
+              <Label>메세지</Label>
+              <Field name="body" component="textarea" />
+              <Button type="submit">전송하기</Button>
+            </form>
           </Col>
         </Row>
       </Container>
@@ -53,4 +71,9 @@ class Footer extends Component {
   }
 }
 
-export default Footer;
+Footer = reduxForm({
+  form: 'contact',
+  fields: ['username', 'email', 'body']
+})(Footer);
+
+export default connect(null, mapDispatchToProps)(Footer);

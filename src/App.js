@@ -1,10 +1,5 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-// import {
-//   Route,
-//   NavLink,
-//   HashRouter
-// } from 'react-router-dom';
 
 // Utilities
 import ReactGA from 'react-ga';
