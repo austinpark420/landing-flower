@@ -11,7 +11,7 @@ const mapDispatchToProps = dispatch => ({
   sendContactAndFeedback: values => dispatch(sendContactAndFeedback(values))
 });
 
-class Footer extends Component {
+class OrderComponent extends Component {
   static propTypes = {
     // values
     handleSubmit: PropTypes.func.isRequired,
@@ -27,9 +27,7 @@ class Footer extends Component {
   }
 
   _onSubmit(values) {
-    console.log('Hello_submit', values);
-    this.props.sendContactAndFeedback(values);
-    this.props.reset();
+    console.log('oreder submit!!', values);
   }
 
   render() {
@@ -74,9 +72,9 @@ class Footer extends Component {
   }
 }
 
-Footer = reduxForm({
+OrderComponent = reduxForm({
   form: 'contact',
   fields: ['username', 'email', 'body']
-})(Footer);
+})(OrderComponent);
 
-export default connect(null, mapDispatchToProps)(Footer);
+export default connect(null, mapDispatchToProps)(OrderComponent);

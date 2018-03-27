@@ -1,22 +1,37 @@
 import React, { Component } from 'react';
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col, Button } from 'reactstrap';
 
 class Body extends Component {
+  constructor() {
+    super();
+    this.onOpenOrderModal = this.onOpenOrderModal.bind(this);
+  }
+
+  onOpenOrderModal() {
+    console.log('hello!!');
+  }
+
   render() {
     return (
       <Container fluid className="body-main-component">
         <Row>
-          <Col>
-            <img className="img-flower" alt="flower" src={require('../img/flower.png')} />
+          <Col lg="6" className="body-description">
+            <div className="body-description-title">꽃으로 사랑을 표현 해보세요</div>
+            <div className="body-description-detail">
+              <li>도매시장 직배송에 의한 상상 그 이상의 싱싱함</li>
+              <li>기존 꽃집과 비교해서 말도 안 되는 장미의 풍성함</li>
+              <li>무료 고급 꽃바구니 + 무료 배송!</li>
+              <li>원하시는 시간과 장소로 배송해 드립니다</li>
+            </div>
+            <div className="body-description-price">가격 50,000 원 (바구니, 장식, 퀵배송 포함)</div>
+            <div className="open-modal order-button-div">
+              <Button className="order-button" onClick={this.onOpenOrderModal}>주문하기</Button>
+            </div>
           </Col>
-          <Col>
-            <h2>1. 도매시장에서 바로 출발하는 상대할 수 없는 싱싱함</h2>
-            <h2>2. 꽃집과 비교해서 말도 안 되는 장미의 풍성함</h2>
-            <h2>3. 꽃 바구니, 배송비까지 포함된 놀라운 가격</h2>
-            <h2>4. 원하시는 시간과 장소로 배송해 드립니다</h2>
-            <h2>사무실로, 집으로 보내 보세요</h2>
-            <br />
-            <h2 className="flower-price">가격 50,000 원 (바구니, 장식, 퀵배송비 포함)</h2>
+          <Col lg="6" className="body-image">
+            <div className="flower-image-container">
+              <img className="flower-image" alt="flower" src={require('../img/flower.png')} />
+            </div>
           </Col>
         </Row>
       </Container>

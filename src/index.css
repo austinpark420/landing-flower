@@ -1,100 +1,147 @@
-/* body {
-    background-color: rgb(41, 40, 38);
-    padding: 20px;
-    margin: 0;
-  }
-h1, h2, h3, p, ul, li {
-  font-family: sans-serif;
-  color: rgb(255, 255, 255)
-}
-ul.header li {
-  display: inline;
-  list-style-type: none;
-  margin: 0;
-}
-ul.header {
-  background-color: rgba(63, 59, 59, 0.753);
-  padding: 0;
-}
-ul.header li a {
-  color: #FFF;
-  font-weight: bold;
-  text-decoration: none;
-  padding: 20px;
-  display: inline-block;
-}
-.content {
-  background-color: rgb(41, 40, 38);
-  padding: 20px;
-}
-.content h2 {
-  padding: 0;
-  margin: 0;
-}
-.content li {
-  margin-bottom: 10px;
-}
-.active {
-  background-color: #0099FF;
-}
-
-.contact-email {
-  height: 100px;
-} */
-
-@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding');
 @font-face {
   font-family: 'BMJUA';
   src: url('./font/BMJUA_otf.otf') format('truetype');
 }
 
-* {
-  font-family: 'BMJUA', 'Noto Sans KR', sans-serif;
-}
-
-body, .jumbotron {
-  /* background: #00cc99; */
-  background: #292827;
-  color: rgba(255, 255, 255, 0.8);
+body {
+  font-family: 'BMJUA', 'Nanum Gothic Coding', sans-serif;
+  color: #fff;
 }
 
 /*--------------------
     Header Section
 --------------------*/
 .header-main-component {
-  padding: 2rem 4rem;
+  background: #292827;
+  padding: 4rem;
   margin: 0;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  text-align: center;
 }
 
-.main-title-header {
-  font-size: 3rem;
+.header-main-component:after {
+  background: url('./img/main_ground.jpg') no-repeat;
+  background-size: cover;
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0.3;
 }
 
-.header-text {
-  font-size: 1.5rem;
+.header-main-title {
+  font-size: 4.5rem;
+  margin-top: 30vh;
+}
+
+.header-body-text {
+  font-family: 'Nanum Gothic Coding';
+  margin-top: 1rem;
+  font-size: 1.1rem;
 }
 
 /*--------------------
     Body Section
 --------------------*/
+/* Body Title section */
 .body-main-component {
-  /* background: #fff; */
-  padding: 2rem 4rem;
-  /* color: #000; */
-  color: rgba(255, 255, 255, 0.8);
+  background: #fff;
+  padding: 4rem 6rem;
+  color: #292827;
 }
 
-.img-flower {
-  height: 30rem;
+.body-description {
+  padding: 2rem;
+  text-align: center;
+}
+
+.body-description-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.body-description-price {
+  font-size: 1.5rem;
+  margin: 1rem auto;
+}
+
+.open-modal.order-button-div {
+  margin-top: 2rem;
+}
+
+.open-modal.order-button-div .order-button {
+  width: 15rem;
+  padding: 0.6rem;
+}
+
+
+/* Image section */
+.body-image {
+  padding: 2rem;
+}
+
+.flower-image-container {
+  opacity: 0.9;
+  width: 400px;
+  height: 350px;
+  margin: 1rem auto;
+  box-shadow: 2px 2px 0px 2px rgba(217, 217, 217, .8);
+  border-radius: 5px;
+}
+
+.flower-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
 }
 
 .flower-price {
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 
 /*--------------------
     Footer Section
 --------------------*/
+/* Footer Text section */
 .footer-main-component {
-  padding: 2rem 4rem;
+  background: #292827;
+  padding: 2rem 6rem;
+}
+
+.contact-us-navigation {
+  margin: 1rem 0;
+}
+
+
+/* Form section */
+.contact-info,
+.contact-request-form {
+  margin: 2rem auto;
+}
+
+.contact-request-form .message-form {
+  margin-top: 1rem;
+}
+
+.contact-us-label {
+  display: block;
+}
+
+.contact-us-field-form {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.contact-us.submit-button {
+  width: 100%;
+  border-radius: 5px;
+  padding: 0.5rem;
+  margin-top: 1rem;
 }

@@ -12,6 +12,7 @@ module.exports = {
 			"no-class-assign": 0,
 			"react/no-unused-prop-types": 0,
 			"no-unused-vars": 0,
+			"class-methods-use-this": 0
 		},
 		"env": {
 			"browser": "true",
