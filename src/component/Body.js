@@ -1,7 +1,21 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Container, Row, Col, Button } from 'reactstrap';
+import { connect } from 'react-redux';
+
+// action
+import { toggleOrderModal } from '../ducks/order';
+
+const mapDispatchToProps = dispatch => ({
+  toggleOrderModal: values => dispatch(toggleOrderModal(values))
+});
 
 class Body extends Component {
+  static propTypes = {
+    // actions
+    toggleOrderModal: PropTypes.func.isRequired
+  }
+
   constructor() {
     super();
     this.onOpenOrderModal = this.onOpenOrderModal.bind(this);
@@ -9,6 +23,7 @@ class Body extends Component {
 
   onOpenOrderModal() {
     console.log('hello!!');
+    this.props.toggleOrderModal(true);
   }
 
   render() {
@@ -39,4 +54,4 @@ class Body extends Component {
   }
 }
 
-export default Body;
+export default connect(null, mapDispatchToProps)(Body);

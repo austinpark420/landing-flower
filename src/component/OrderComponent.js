@@ -73,7 +73,7 @@ class OrderComponent extends Component {
 }
 
 OrderComponent = reduxForm({
-  form: 'contact',
+  form: 'orderComponent',
   fields: ['username', 'email', 'body']
 })(OrderComponent);
 

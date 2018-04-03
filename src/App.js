@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 // Utilities
 import ReactGA from 'react-ga';
+import ReactModalWindow from './utils/ReactModalWindow';
 
 // Component
 import { Header, Body, Footer } from './component';
@@ -28,6 +29,7 @@ class App extends Component {
         <Header />
         <Body />
         <Footer />
+        <ReactModalWindow />
       </div>
     );
   }
