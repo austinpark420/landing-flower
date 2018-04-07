@@ -22,7 +22,6 @@ class Body extends Component {
   }
 
   onOpenOrderModal() {
-    console.log('hello!!');
     this.props.toggleOrderModal(true);
   }
 

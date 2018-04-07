@@ -15,7 +15,10 @@ module.exports = {
 			"class-methods-use-this": 0,
 			"react/jsx-closing-bracket-location": 0,
 			"arrow-parens": 0,
-			"arrow-body-style": 0
+			"arrow-body-style": 0,
+			"import/prefer-default-export": 0,
+			"jsx-a11y/click-events-have-key-events": 0,
+			"jsx-a11y/no-static-element-interactions": 0
 		},
 		"env": {
 			"browser": "true",
