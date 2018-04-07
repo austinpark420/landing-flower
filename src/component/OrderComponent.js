@@ -5,10 +5,10 @@ import { reduxForm, Field } from 'redux-form';
 import { connect } from 'react-redux';
 
 // action
-import { sendContactAndFeedback } from '../ducks/contact';
+import { sendOrderForm } from '../ducks/order';
 
 const mapDispatchToProps = dispatch => ({
-  sendContactAndFeedback: values => dispatch(sendContactAndFeedback(values))
+  sendOrderForm: values => dispatch(sendOrderForm(values))
 });
 
 class OrderComponent extends Component {
@@ -18,7 +18,7 @@ class OrderComponent extends Component {
     reset: PropTypes.func.isRequired,
 
     // actions
-    sendContactAndFeedback: PropTypes.func.isRequired
+    sendOrderForm: PropTypes.func.isRequired
   }
 
   constructor() {
@@ -27,46 +27,58 @@ class OrderComponent extends Component {
   }
 
   _onSubmit(values) {
-    console.log('oreder submit!!', values);
+    return new Promise((resolve, reject) => {
+      const sendOrderPromise = this.props.sendOrderForm(values);
+      sendOrderPromise.then((res) => {
+        this.props.reset();
+        resolve(res);
+      }).catch((err) => reject(err));
+    });
   }
 
   render() {
     const { handleSubmit } = this.props;
 
     return (
-      <Container fluid className="footer-main-component">
-        <Row>
-          <Col lg="6" className="contact-info">
-            <h2>Contact Us</h2>
-            <div className="contact-us-navigation">-- 문의사항 또는 개선 했으면 하는 피드백을 남겨주세요 --</div>
-            <div>회사명: 쿠스랩</div>
-            <div>대표: 구일모</div>
-            <div>사업자번호: 606-466-9713</div>
-            <div className="contact-email">
-              이메일: <a href="mailto: contact@kooslab.com">contact@kooslab.com</a>
+      <Container fluid className="order-main-component">
+        <div className="order-request-form">
+          <form onSubmit={handleSubmit(this._onSubmit)}>
+            <Row>
+              <Col sm="6" className="purchaser-name order-form">
+                <Label className="order-label">보내는 분 이름</Label>
+                <Field name="username" component="input" className="order-field-form" />
+              </Col>
+              <Col sm="6" className="purchaser-email order-form">
+                <Label className="order-label">보내는 분 이메일</Label>
+                <Field name="email" component="input" className="order-field-form" />
+              </Col>
+              <Col sm="6" className="purchaser-phone-number order-form">
+                <Label className="order-label">보내는 분 전화번호</Label>
+                <Field name="phoneNumber" component="input" className="order-field-form" />
+              </Col>
+            </Row>
+            <hr className="ui my-2 divider" />
+            <Row>
+              <Col sm="6" className="receiver-name order-form">
+                <Label className="order-label">받는 분 이름</Label>
+                <Field name="receiverName" component="input" className="order-field-form" />
+              </Col>
+              <Col sm="6" className="receiver-phone-number order-form">
+                <Label className="order-label">받는 분 전화번호</Label>
+                <Field name="receiverPhoneNumber" component="input" className="order-field-form" />
+              </Col>
+              <Col sm="12" className="receiver-address order-form">
+                <Label className="order-label">받는 분 주소</Label>
+                <Field name="receiverAddress" component="input" className="order-field-form" />
+              </Col>
+            </Row>
+            <div className="card-message order-form">
+              <Label className="order-label">카드에 메세지를 남겨보세요</Label>
+              <Field name="message" component="textarea" className="order-field-form" />
             </div>
-            <div>주소: 서울특별시 동작구 사당로2길 76 1101호</div>
-          </Col>
-          <Col lg="6" className="contact-request-form">
-            <form onSubmit={handleSubmit(this._onSubmit)}>
-              <Row>
-                <Col sm="6" className="username-form">
-                  <Label className="contact-us-label">이름</Label>
-                  <Field name="username" component="input" className="contact-us-field-form" />
-                </Col>
-                <Col sm="6" className="email-form">
-                  <Label className="contact-us-label">이메일 주소</Label>
-                  <Field name="email" component="input" className="contact-us-field-form" />
-                </Col>
-              </Row>
-              <div className="message-form">
-                <Label className="contact-us-label">메세지</Label>
-                <Field name="body" component="textarea" className="contact-us-field-form" />
-              </div>
-              <Button type="submit" className="contact-us submit-button">전송하기</Button>
-            </form>
-          </Col>
-        </Row>
+            <Button type="submit" className="order-component submit-button">전송하기</Button>
+          </form>
+        </div>
       </Container>
     );
   }
@@ -74,7 +86,7 @@ class OrderComponent extends Component {
 
 OrderComponent = reduxForm({
   form: 'orderComponent',
-  fields: ['username', 'email', 'body']
+  fields: ['username', 'email', 'phoneNumber', 'receiverName', 'receiverPhoneNumber', 'receiverAddress', 'message']
 })(OrderComponent);
 
 export default connect(null, mapDispatchToProps)(OrderComponent);

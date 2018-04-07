@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Modal from 'react-modal';
 
 /* component */
-import { OrderComponent } from '../component';
+import { OrderComponent, OrderInfo } from '../component';
 
 /* utilities */
 import { isEventInClassNameNode } from './handleEvent';
@@ -15,9 +15,10 @@ import { toggleOrderModal } from '../ducks/order';
 /* styles */
 const styles = require('./ReactModalStyles');
 
-const mapStateToProps = state => {
+const mapStateToProps = ({ order }) => {
   return {
-    isReactModalOpen: state.order.isReactModalOpen
+    isReactModalOpen: order.isReactModalOpen,
+    isAlreadyOrdered: order.isAlreadyOrdered
   };
 };
 
@@ -29,6 +30,7 @@ class ReactModalWindow extends Component {
   static propTypes = {
     // values
     isReactModalOpen: PropTypes.bool.isRequired,
+    isAlreadyOrdered: PropTypes.bool.isRequired,
 
     // actions
     toggleOrderModal: PropTypes.func.isRequired
@@ -55,7 +57,7 @@ class ReactModalWindow extends Component {
   }
 
   render() {
-    const { isReactModalOpen } = this.props;
+    const { isReactModalOpen, isAlreadyOrdered } = this.props;
 
     return (
       <Modal
@@ -67,7 +69,7 @@ class ReactModalWindow extends Component {
         ariaHideApp={false}>
         <div id="react-modal-window-inner-container" className="modal-inner-container" onClick={this._captureAndFireReturnEvent}>
           <div id="react-modal-window-center-container" className="modal-body-center-container">
-            <OrderComponent />
+            {isAlreadyOrdered ? <OrderComponent /> : <OrderInfo />}
           </div>
         </div>
       </Modal>

@@ -4,7 +4,9 @@ export const CONTACT_AND_FEEDBACK_SUCCESS = 'contact/CONTACT_AND_FEEDBACK_SUCCES
 export const CONTACT_AND_FEEDBACK_FAILURE = 'contact/CONTACT_AND_FEEDBACK_FAILURE';
 
 const config = {
-  headers: { 'Content-Type': 'application/json' }
+  headers: {
+    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+  }
 };
 
 export function contactAndFeedbackSuccess() {

@@ -27,7 +27,6 @@ class Footer extends Component {
   }
 
   _onSubmit(values) {
-    console.log('Hello_submit', values);
     this.props.sendContactAndFeedback(values);
     this.props.reset();
   }
