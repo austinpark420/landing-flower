@@ -147,6 +147,7 @@ body {
 --------------------*/
 .ReactModal__Body--open {
   overflow: hidden;
+  margin-right: 15px;
 }
 
 #react-modal-window-inner-container {
@@ -175,6 +176,7 @@ body {
 .order-main-component {
   background: #292827;
   padding: 2rem;
+  border-radius: 5px;
 }
 
 .order-label {
@@ -208,10 +210,30 @@ body {
 .order-info-main-component {
   background: #292827;
   padding: 2rem;
+  border-radius: 5px;
 }
 
 .order-info-main-component .order-info-title {
   font-size: 2.5rem;
   text-align: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.order-info-main-component .order-info-body .body-text {
+  margin-bottom: 1em;
+}
+
+.order-info-main-component .order-info-body .body-list {
+  margin-bottom: 2em;
+}
+
+.order-info-main-component .order-info-body .body-confirm-button {
+  widows: 100%;
+}
+
+.order-info-main-component .order-info.confirm-button {
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+  padding: 0.5em;
 }

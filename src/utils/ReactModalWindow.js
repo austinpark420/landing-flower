@@ -69,7 +69,7 @@ class ReactModalWindow extends Component {
         ariaHideApp={false}>
         <div id="react-modal-window-inner-container" className="modal-inner-container" onClick={this._captureAndFireReturnEvent}>
           <div id="react-modal-window-center-container" className="modal-body-center-container">
-            {isAlreadyOrdered ? <OrderComponent /> : <OrderInfo />}
+            {!isAlreadyOrdered ? <OrderComponent /> : <OrderInfo />}
           </div>
         </div>
       </Modal>
