@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Container, Button } from 'reactstrap';
-import { reduxForm, Field } from 'redux-form';
 import { connect } from 'react-redux';
 
 // action
-import { sendOrderForm } from '../ducks/order';
+import { toggleOrderModal } from '../ducks/order';
 
 const mapDispatchToProps = dispatch => ({
-  sendOrderForm: values => dispatch(sendOrderForm(values))
+  toggleOrderModal: (state, type) => dispatch(toggleOrderModal(state, type))
 });
 
 class OrderInfo extends Component {
   static propTypes = {
+    // actions
+    toggleOrderModal: PropTypes.func.isRequired
   }
 
   constructor() {
@@ -21,7 +22,7 @@ class OrderInfo extends Component {
   }
 
   _closeModal() {
-    console.log('close modal');
+    this.props.toggleOrderModal(false, null);
   }
 
   render() {

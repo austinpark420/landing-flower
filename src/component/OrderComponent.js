@@ -42,6 +42,7 @@ class OrderComponent extends Component {
     return (
       <Container fluid className="order-main-component">
         <div className="order-request-form">
+          <div className="order-request-form-title">해당 정보를 입력 해 주세요</div>
           <form onSubmit={handleSubmit(this._onSubmit)}>
             <Row>
               <Col sm="6" className="purchaser-name order-form">

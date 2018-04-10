@@ -3,3 +3,4 @@ export { default as Body } from './Body';
 export { default as Footer } from './Footer';
 export { default as OrderComponent } from './OrderComponent';
 export { default as OrderInfo } from './OrderInfo';
+export { default as ContactUsComponent } from './ContactUsComponent';

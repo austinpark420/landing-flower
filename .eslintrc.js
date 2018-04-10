@@ -21,7 +21,8 @@ module.exports = {
 			"jsx-a11y/no-static-element-interactions": 0,
 			"max-len": 0,
 			"object-curly-newline": 0,
-			"react/no-unescaped-entities": 0
+			"react/no-unescaped-entities": 0,
+			"react/require-default-props": 0
 		},
 		"env": {
 			"browser": "true",

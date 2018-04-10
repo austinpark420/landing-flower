@@ -108,38 +108,26 @@ body {
 /* Footer Text section */
 .footer-main-component {
   background: #292827;
-  padding: 2rem 6rem;
+  padding: 1rem 2rem;
 }
-
-.contact-us-navigation {
-  margin: 1rem 0;
-}
-
 
 /* Form section */
-.contact-info,
-.contact-request-form {
-  margin: 2rem auto;
+.contact-info {
+  margin: 1rem auto;
+  text-align: center;
 }
 
-.contact-request-form .message-form {
-  margin-top: 1rem;
+.contact-info .info-item {
+  margin-right: 1em;
 }
 
-.contact-us-label {
-  display: block;
+.contact-info .contact-us-button {
+  cursor: pointer;
+  text-decoration: underline;
 }
 
-.contact-us-field-form {
-  width: 100%;
-  border-radius: 5px;
-}
-
-.contact-us.submit-button {
-  width: 100%;
-  border-radius: 5px;
-  padding: 0.5rem;
-  margin-top: 1rem;
+.contact-info .contact-us-button:hover {
+  font-size: 1.1rem;
 }
 
 /*--------------------
@@ -179,6 +167,12 @@ body {
   border-radius: 5px;
 }
 
+.order-main-component .contact-request-form-ttile {
+  font-size: 2.2em;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
 .order-label {
   display: block;
 }
@@ -186,6 +180,12 @@ body {
 .order-field-form {
   width: 100%;
   border-radius: 5px;
+}
+
+.order-request-form .order-request-form-title {
+  font-size: 2.2em;
+  text-align: center;
+  margin-bottom: 1em;
 }
 
 .order-request-form .order-form {
@@ -236,4 +236,27 @@ body {
   margin: 0 auto;
   width: 50%;
   padding: 0.5em;
+}
+
+/*--------------------
+  Contact-us Section
+--------------------*/
+.contact-request-form .message-form {
+  margin-top: 1rem;
+}
+
+.contact-us-label {
+  display: block;
+}
+
+.contact-us-field-form {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.contact-us.submit-button {
+  width: 100%;
+  border-radius: 5px;
+  padding: 0.5rem;
+  margin-top: 1rem;
 }

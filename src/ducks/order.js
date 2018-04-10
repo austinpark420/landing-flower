@@ -12,6 +12,7 @@ const config = {
 
 const initialState = {
   isReactModalOpen: false,
+  reactModalType: null,
   isAlreadyOrdered: false
 };
 
@@ -20,7 +21,8 @@ export default function reducer(state = initialState, action = {}) {
     case TOGGLE_ORDER_MODAL:
       return {
         ...state,
-        isReactModalOpen: action.modalState
+        isReactModalOpen: action.modalState,
+        reactModalType: action.modalType
       };
     case SUBMIT_ORDER_SUCCESS:
       return {
@@ -32,10 +34,11 @@ export default function reducer(state = initialState, action = {}) {
   }
 }
 
-export function toggleOrderModal(modalState) {
+export function toggleOrderModal(modalState, modalType) {
   return {
     type: TOGGLE_ORDER_MODAL,
-    modalState
+    modalState,
+    modalType
   };
 }
 

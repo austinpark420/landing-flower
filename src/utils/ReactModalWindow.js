@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Modal from 'react-modal';
 
 /* component */
-import { OrderComponent, OrderInfo } from '../component';
+import { OrderComponent, OrderInfo, ContactUsComponent } from '../component';
 
 /* utilities */
 import { isEventInClassNameNode } from './handleEvent';
@@ -18,6 +18,7 @@ const styles = require('./ReactModalStyles');
 const mapStateToProps = ({ order }) => {
   return {
     isReactModalOpen: order.isReactModalOpen,
+    reactModalType: order.reactModalType,
     isAlreadyOrdered: order.isAlreadyOrdered
   };
 };
@@ -30,6 +31,7 @@ class ReactModalWindow extends Component {
   static propTypes = {
     // values
     isReactModalOpen: PropTypes.bool.isRequired,
+    reactModalType: PropTypes.string,
     isAlreadyOrdered: PropTypes.bool.isRequired,
 
     // actions
@@ -57,7 +59,11 @@ class ReactModalWindow extends Component {
   }
 
   render() {
-    const { isReactModalOpen, isAlreadyOrdered } = this.props;
+    const { isReactModalOpen, reactModalType, isAlreadyOrdered } = this.props;
+
+    const isContactus = reactModalType === 'contact-us';
+    const orderComponent = !isAlreadyOrdered ? <OrderComponent /> : <OrderInfo />;
+    const modalComponent = isContactus ? <ContactUsComponent /> : orderComponent;
 
     return (
       <Modal
@@ -69,7 +75,7 @@ class ReactModalWindow extends Component {
         ariaHideApp={false}>
         <div id="react-modal-window-inner-container" className="modal-inner-container" onClick={this._captureAndFireReturnEvent}>
           <div id="react-modal-window-center-container" className="modal-body-center-container">
-            {!isAlreadyOrdered ? <OrderComponent /> : <OrderInfo />}
+            {modalComponent}
           </div>
         </div>
       </Modal>

@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import { toggleOrderModal } from '../ducks/order';
 
 const mapDispatchToProps = dispatch => ({
-  toggleOrderModal: values => dispatch(toggleOrderModal(values))
+  toggleOrderModal: (state, type) => dispatch(toggleOrderModal(state, type))
 });
 
 class Body extends Component {
@@ -22,7 +22,7 @@ class Body extends Component {
   }
 
   onOpenOrderModal() {
-    this.props.toggleOrderModal(true);
+    this.props.toggleOrderModal(true, 'order');
   }
 
   render() {
