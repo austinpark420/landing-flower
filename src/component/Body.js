@@ -29,14 +29,14 @@ class Body extends Component {
     return (
       <Container fluid className="body-main-component">
         <Row>
-          <Col lg="8" className="body-description">
-            <div className="body-description-title">꽃으로 사랑을 전달하세요</div>
+          <Col lg="7" className="body-description">
+            <div className="body-description-title">꽃바구니로 마음을 전달하세요</div>
             <div className="body-description-detail">
               <div className="body-description-detail-inner">
                 <li>도매시장 직배송으로 최상의 싱싱함</li>
                 <li>기존 온라인/꽃집과 비교하여 2배 이상의 풍성함</li>
                 <li>꽃바구니 + 배송비 포함 가격</li>
-                <li>원하시는 시간과 장소로 배송해 드립니다</li>
+                <li>원하시는 시간과 장소로 배송해 드려요</li>
               </div>
             </div>
             <div className="body-description-price">가격 <p className="amount">50,000</p>원 (바구니, 장식, 퀵배송 포함)</div>
@@ -46,10 +46,10 @@ class Body extends Component {
               <div>- 배송 24시간 전에는 주문이 필요합니다.</div>
             </div>
             <div className="open-modal order-button-div">
-              <Button className="order-button" onClick={this.onOpenOrderModal}>주문하기</Button>
+              <Button className="order-button" size="lg" onClick={this.onOpenOrderModal}>마음 보내기</Button>
             </div>
           </Col>
-          <Col lg="4" className="body-image">
+          <Col lg="5" className="body-image">
             <div className="flower-image-container">
               <img className="flower-image" alt="flower" src={require('../img/flower.png')} />
             </div>
