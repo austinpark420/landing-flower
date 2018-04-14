@@ -63,8 +63,19 @@ body {
 }
 
 .body-description-title {
-  font-size: 2.5rem;
+  font-size: 4rem;
   margin-bottom: 1rem;
+  text-align: center;
+}
+
+.body-description-detail {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.body-description-detail-inner {
+  text-align: center;
 }
 
 .body-description-price {
@@ -91,7 +102,7 @@ body {
   opacity: 0.9;
   width: 400px;
   height: 350px;
-  margin: 1rem auto;
+  margin: 1rem auto auto 1rem;
   box-shadow: 2px 2px 0px 2px rgba(217, 217, 217, .8);
   border-radius: 5px;
 }
