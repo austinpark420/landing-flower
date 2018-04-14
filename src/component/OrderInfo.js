@@ -31,12 +31,12 @@ class OrderInfo extends Component {
         <div className="order-info-title">주문 성공</div>
         <div className="order-info-body">
           <div className="body-text">
-            주문이 성공적으로 접수 되었습니다. 해당 금액 '50,000원'을 아래 계좌로 입금 하시면, 10분 이내로 확인 연락을 드리도록 하겠습니다.
+            주문이 성공적으로 접수 되었습니다. 해당 금액 '50,000원'을 아래 계좌로 입금 하시면, 주문접수 후 확인 연락을 드리도록 하겠습니다.
           </div>
           <div className="body-list">
             <li>입금 금액: 50,000원</li>
-            <li>입금 계좌: 123-456-789</li>
-            <li>은행명: 국민은행</li>
+            <li>입금 계좌: 237-076182-01-017</li>
+            <li>은행명: 기업은행</li>
             <li>계좌주: 구일모</li>
           </div>
           <div className="body-confirm-button">

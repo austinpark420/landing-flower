@@ -33,13 +33,18 @@ class Body extends Component {
             <div className="body-description-title">꽃으로 사랑을 전달하세요</div>
             <div className="body-description-detail">
               <div className="body-description-detail-inner">
-                <li>도매시장 직배송에 의한 상상 그 이상의 싱싱함</li>
-                <li>기존 꽃집과 비교해서 말도 안 되는 장미의 풍성함</li>
-                <li>무료 고급 꽃바구니 + 무료 배송!</li>
+                <li>도매시장 직배송으로 최상의 싱싱함</li>
+                <li>기존 온라인/꽃집과 비교하여 2배 이상의 풍성함</li>
+                <li>꽃바구니 + 배송비 포함 가격</li>
                 <li>원하시는 시간과 장소로 배송해 드립니다</li>
               </div>
             </div>
-            <div className="body-description-price">가격 50,000 원 (바구니, 장식, 퀵배송 포함)</div>
+            <div className="body-description-price">가격 <p className="amount">50,000</p>원 (바구니, 장식, 퀵배송 포함)</div>
+            <div className="body-description-caution">
+              <div>- 현재 서울지역만 주문을 받고 있습니다.</div>
+              <div>- 수도권 지역은 별도로 연락 주시기 바랍니다.</div>
+              <div>- 배송 24시간 전에는 주문이 필요합니다.</div>
+            </div>
             <div className="open-modal order-button-div">
               <Button className="order-button" onClick={this.onOpenOrderModal}>주문하기</Button>
             </div>

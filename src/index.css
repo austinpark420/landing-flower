@@ -83,6 +83,16 @@ body {
   margin: 1rem auto;
 }
 
+.amount {
+  display: inline;
+  color: #0077FF;
+}
+
+.body-description-caution {
+  font-size: 1rem;
+  margin: 1rem auto;
+}
+
 .open-modal.order-button-div {
   margin-top: 2rem;
 }
