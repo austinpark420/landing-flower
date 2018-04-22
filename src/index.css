@@ -3,10 +3,15 @@
   font-family: 'BMJUA';
   src: url('./font/BMJUA_otf.otf') format('truetype');
 }
+@font-face {
+  font-family: 'AppleGothic';
+  src: local("Apple SD Gothic Neo");
+}
 
 body {
-  font-family: 'BMJUA', 'Nanum Gothic Coding', sans-serif;
+  font-family: 'AppleGothic', 'BMJUA', sans-serif;
   color: #fff;
+  min-width: 320px;
 }
 
 /*--------------------
@@ -37,14 +42,14 @@ body {
 }
 
 .header-main-title {
-  font-size: 4.5rem;
-  margin-top: 30vh;
+  font-family: 'BMJUA';
+  font-size: 5em;
+  padding-top: 25vh;
 }
 
 .header-body-text {
-  font-family: 'Nanum Gothic Coding';
   margin-top: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.5em;
 }
 
 /*--------------------
@@ -53,34 +58,38 @@ body {
 /* Body Title section */
 .body-main-component {
   background: #fff;
-  padding: 4rem 6rem;
+  padding: 3rem;
   color: #292827;
 }
 
 .body-description {
-  padding: 2rem;
+  padding: 1rem;
   text-align: center;
 }
 
 .body-description-title {
-  font-size: 4rem;
+  font-family: 'BMJUA';
+  font-size: 3.5rem;
   margin-bottom: 1rem;
   text-align: center;
 }
 
 .body-description-detail {
-  font-size: 1.6rem;
+  font-size: 1.3em;
+  text-align: center;
   margin-bottom: 1rem;
-  text-align: center;
-}
-
-.body-description-detail-inner {
-  text-align: center;
 }
 
 .body-description-price {
-  font-size: 2rem;
+  font-weight: 500;
+  font-size: 1.3em;
   margin: 1rem auto;
+}
+
+.body-description-price .price-text {
+  font-family: 'BMJUA';
+  font-weight: 900;
+  font-size: 1.5em;
 }
 
 .amount {
@@ -98,27 +107,25 @@ body {
 }
 
 .open-modal.order-button-div .order-button {
-  width: 15rem;
-  height: 5rem;
-  padding: 0.2rem;
-  font-size: 3rem;
-  background-color: #0077FF;
+  font-family: 'BMJUA';
+  border: none;
+  font-size: 2em;
+  width: 10em;
+  background-color: rgba(0, 119, 255, 0.7);
 }
 
 
 /* Image section */
 .body-image {
-  padding: auto;
   display: flex;
   text-align: center;
 }
 
 .flower-image-container {
-  opacity: 0.9;
+  opacity: 0.85;
   width: 100%;
   height: 100%;
-  /* margin: auto; */
-  box-shadow: 2px 2px 0px 2px rgba(217, 217, 217, .8);
+  padding: 2em;
   border-radius: 5px;
 }
 
@@ -143,13 +150,14 @@ body {
   text-align: center;
 }
 
-.contact-info .info-item {
+.contact-info .item {
   margin-right: 1em;
 }
 
 .contact-info .contact-us-button {
   cursor: pointer;
   text-decoration: underline;
+  margin-left: 1em;
 }
 
 .contact-info .contact-us-button:hover {
@@ -161,7 +169,7 @@ body {
 --------------------*/
 .ReactModal__Body--open {
   overflow: hidden;
-  margin-right: 15px;
+  /* margin-right: 15px; */
 }
 
 #react-modal-window-inner-container {
@@ -176,10 +184,10 @@ body {
   display: flex;
   align-items: center;
   justify-items: center;
-  min-height: 90vh;
+  min-height: 100vh;
   margin-left: auto;
   margin-right: auto;
-  width: 85%;
+  width: 90%;
   max-width: 580px;
   min-width: 320px;
 }
@@ -240,7 +248,8 @@ body {
 }
 
 .order-info-main-component .order-info-title {
-  font-size: 2.5rem;
+  font-family: 'BMJUA';
+  font-size: 3em;
   text-align: center;
   margin-bottom: 1rem;
 }
@@ -285,4 +294,157 @@ body {
   border-radius: 5px;
   padding: 0.5rem;
   margin-top: 1rem;
+}
+
+
+/* Media Query Section */
+@media only screen and (max-width: 991px) {
+  .flower-image-container {
+    padding: 2em 7em;
+  }
+}
+
+@media only screen and (max-width: 730px) {
+  .header-main-title {
+    font-size: 4em;
+  }
+  
+  .header-body-text {
+    font-size: 1.3em;
+  }
+
+  .body-main-component {
+    padding: 2rem;
+  }
+
+  .body-description-title {
+    font-size: 3em;
+  }
+
+  .body-description-detail {
+    font-size: 1.2em;
+  }
+
+  .flower-image-container {
+    padding: 2em 5em;
+  }
+
+  .company-info .info-item {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .flower-image-container {
+    padding: 2em;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .order-request-form .order-request-form-title,
+  .order-main-component .contact-request-form-ttile {
+    font-size: 1.6em;
+  }
+
+  .order-sub-main-container,
+  .order-info-main-component {
+    max-height: 70vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .contact-request-form .email-form {
+    margin-top: 1rem;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  #react-modal-window-center-container {
+    min-height: 90vh;
+  }
+
+  .header-main-title {
+    font-size: 3em;
+    /* padding-top: 20vh; */
+  }
+
+  .header-body-text {
+    font-size: 1.1em;
+  }
+
+  .body-main-component {
+    padding: 1rem;
+  }
+
+  .body-description-title {
+    font-size: 2em;
+  }
+
+  .body-description-detail {
+    font-size: 1em;
+  }
+
+  .body-description-price {
+    font-size: 1.2em;
+  }
+
+  .body-description-caution {
+    font-size: 0.9em;
+  }
+
+  .open-modal.order-button-div .order-button {
+    font-size: 1.5em;
+    width: 7em;
+  }
+
+  .flower-image-container {
+    padding: 1em;
+  }
+
+  .order-main-component {
+    padding: 1em;
+  }
+
+  .order-request-form .order-request-form-title,
+  .order-main-component .contact-request-form-ttile {
+    font-size: 1.3em;
+  }
+
+  .order-label,
+  .contact-us-label {
+    font-size: 0.9em;
+  }
+
+  .order-info-main-component {
+    padding: 1rem 2rem;
+  }
+
+  .order-info-main-component .order-info-title {
+    font-size: 2em;
+  }
+
+  .order-info-body {
+    font-size: 0.9em;
+  }
+
+  .footer-main-component {
+    padding: 1rem;
+    font-size: 0.9em;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .order-main-component,
+  .order-info-main-component {
+    margin: 1em;
+  }
+
+  .header-main-title {
+    font-size: 2.5em;
+    padding-top: 20vh;
+  }
+
+  .header-body-text {
+    font-size: 1em;
+  }
 }

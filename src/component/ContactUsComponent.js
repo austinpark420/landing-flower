@@ -45,25 +45,27 @@ class ContactUsComponent extends Component {
 
     return (
       <Container fluid className="order-main-component">
-        <div className="contact-request-form">
-          <div className="contact-request-form-ttile">해당 정보를 입력 해 주세요</div>
-          <form onSubmit={handleSubmit(this._onSubmit)}>
-            <Row>
-              <Col sm="6" className="username-form">
-                <Label className="contact-us-label">이름</Label>
-                <Field name="username" component="input" className="contact-us-field-form" />
-              </Col>
-              <Col sm="6" className="email-form">
-                <Label className="contact-us-label">이메일 주소</Label>
-                <Field name="email" component="input" className="contact-us-field-form" />
-              </Col>
-            </Row>
-            <div className="message-form">
-              <Label className="contact-us-label">메세지</Label>
-              <Field name="body" component="textarea" className="contact-us-field-form" />
-            </div>
-            <Button type="submit" className="contact-us submit-button">전송하기</Button>
-          </form>
+        <div className="order-sub-main-container">
+          <div className="contact-request-form">
+            <div className="contact-request-form-ttile">해당 정보를 입력 해 주세요</div>
+            <form onSubmit={handleSubmit(this._onSubmit)}>
+              <Row>
+                <Col sm="6" className="username-form">
+                  <Label className="contact-us-label">이름</Label>
+                  <Field name="username" component="input" className="contact-us-field-form" />
+                </Col>
+                <Col sm="6" className="email-form">
+                  <Label className="contact-us-label">이메일 주소</Label>
+                  <Field name="email" component="input" className="contact-us-field-form" />
+                </Col>
+              </Row>
+              <div className="message-form">
+                <Label className="contact-us-label">메세지</Label>
+                <Field name="body" component="textarea" className="contact-us-field-form" />
+              </div>
+              <Button type="submit" className="contact-us submit-button">전송하기</Button>
+            </form>
+          </div>
         </div>
       </Container>
     );

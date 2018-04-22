@@ -30,10 +30,12 @@ class Footer extends Component {
       <Container fluid className="footer-main-component">
         <div className="contact-info">
           <div className="company-info">
-            <span className="info-item">회사명: 쿠스랩</span>
-            <span className="info-item">대표: 구일모</span>
-            <span className="info-item">사업자번호: 606-466-9713</span>
-            <span className="info-item">주소: 서울특별시 동작구 사당로2길 76 1101호</span>
+            <span className="info-item">
+              <span className="item">회사명: 쿠스랩</span>
+              <span className="item">대표: 구일모</span>
+            </span>
+            <span className="info-item item">사업자번호: 606-466-9713</span>
+            <span className="info-item item">주소: 서울특별시 동작구 사당로2길 76 1101호</span>
           </div>
           <div className="contact-info">
             <span className="contact-email info-item">
