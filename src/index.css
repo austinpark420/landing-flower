@@ -431,9 +431,14 @@ body {
     padding: 1rem;
     font-size: 0.9em;
   }
+
+  .header-main-title .first-title,
+  .header-main-title .second-title {
+    display: block;
+  }
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 360px) {
   .order-main-component,
   .order-info-main-component {
     margin: 1em;
@@ -446,5 +451,9 @@ body {
 
   .header-body-text {
     font-size: 1em;
+  }
+
+  .header-body-text .last-body-text {
+    display: block;
   }
 }
