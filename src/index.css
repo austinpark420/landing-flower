@@ -89,7 +89,8 @@ body {
 .body-description-price .price-text {
   font-family: 'BMJUA';
   font-weight: 900;
-  font-size: 1.5em;
+  font-size: 1.8em;
+  margin-bottom: 1.5rem;
 }
 
 .amount {
