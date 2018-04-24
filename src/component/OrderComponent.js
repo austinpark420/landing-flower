@@ -6,6 +6,8 @@ import { connect } from 'react-redux';
 
 // action
 import { sendOrderForm } from '../ducks/order';
+import validate from '../utils/validate';
+import nameField from './fields/nameField';
 
 const mapDispatchToProps = dispatch => ({
   sendOrderForm: values => dispatch(sendOrderForm(values))
@@ -48,30 +50,30 @@ class OrderComponent extends Component {
               <Row>
                 <Col sm="6" className="purchaser-name order-form">
                   <Label className="order-label">보내는 분 이름</Label>
-                  <Field name="username" component="input" className="order-field-form" />
+                  <Field name="name" component={nameField} className="order-field-form" />
                 </Col>
                 <Col sm="6" className="purchaser-email order-form">
                   <Label className="order-label">보내는 분 이메일</Label>
-                  <Field name="email" component="input" className="order-field-form" />
+                  <Field name="email" component={nameField} className="order-field-form" />
                 </Col>
                 <Col sm="6" className="purchaser-phone-number order-form">
                   <Label className="order-label">보내는 분 전화번호</Label>
-                  <Field name="phoneNumber" component="input" className="order-field-form" />
+                  <Field name="mobile" component={nameField} className="order-field-form" />
                 </Col>
               </Row>
               <hr className="ui my-2 divider" />
               <Row>
                 <Col sm="6" className="receiver-name order-form">
                   <Label className="order-label">받는 분 이름</Label>
-                  <Field name="receiverName" component="input" className="order-field-form" />
+                  <Field name="recipient" component={nameField} className="order-field-form" />
                 </Col>
                 <Col sm="6" className="receiver-phone-number order-form">
                   <Label className="order-label">받는 분 전화번호</Label>
-                  <Field name="receiverPhoneNumber" component="input" className="order-field-form" />
+                  <Field name="recipientMobile" component={nameField} className="order-field-form" />
                 </Col>
                 <Col sm="12" className="receiver-address order-form">
                   <Label className="order-label">받는 분 주소</Label>
-                  <Field name="receiverAddress" component="input" className="order-field-form" />
+                  <Field name="recipientAddress" component={nameField} className="order-field-form" />
                 </Col>
               </Row>
               <div className="card-message order-form">
@@ -89,7 +91,8 @@ class OrderComponent extends Component {
 
 OrderComponent = reduxForm({
   form: 'orderComponent',
-  fields: ['username', 'email', 'phoneNumber', 'receiverName', 'receiverPhoneNumber', 'receiverAddress', 'message']
+  fields: ['name', 'email', 'mobile', 'recipient', 'recipientMobile', 'recipientAddress', 'message'],
+  validate
 })(OrderComponent);
 
 export default connect(null, mapDispatchToProps)(OrderComponent);
