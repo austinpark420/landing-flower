@@ -7,6 +7,10 @@
   font-family: 'AppleGothic';
   src: local("Apple SD Gothic Neo");
 }
+@font-face {
+  font-family: 'GothicA1-Regular';
+  src: url('./font/GothicA1-Regular.ttf') format('truetype');
+}
 
 body {
   font-family: 'AppleGothic', 'BMJUA', sans-serif;
@@ -18,10 +22,10 @@ body {
     Header Section
 --------------------*/
 .header-main-component {
-  background: #292827;
+  background: #f2f2f2;
   padding: 4rem;
   margin: 0;
-  height: 100vh;
+  height: 95vh;
   width: 100%;
   position: relative;
   z-index: 0;
@@ -29,28 +33,35 @@ body {
 }
 
 .header-main-component:after {
-  background: url('./img/main_ground.jpg') no-repeat;
+  background: url('./img/main_ground2.jpeg') no-repeat;
   background-size: cover;
+  background-position: center;
   content: '';
+  height: 600px;
   position: absolute;
   top: 0;
   bottom: 0;
   right: 0;
   left: 0;
   z-index: -1;
-  opacity: 0.3;
+
 }
 
 .header-main-title {
-  font-family: 'BMJUA';
+  font-family: 'GothicA1-Regular';
   font-size: 5em;
-  padding-top: 25vh;
+  padding-top: 63vh;
 }
 
 .header-body-text {
   margin-top: 1rem;
   font-size: 1.5em;
+  color: #181818;
 }
+
+.first-title, .second-title{
+    color: #88898d;
+  }
 
 /*--------------------
     Body Section
@@ -68,16 +79,23 @@ body {
 }
 
 .body-description-title {
-  font-family: 'BMJUA';
+  font-family: 'GothicA1-Regular';
   font-size: 3.5rem;
   margin-bottom: 0.3rem;
   text-align: center;
+  color: #88898d
 }
 
 .body-description-detail {
   font-size: 1.3em;
   text-align: left;
   margin-bottom: 1rem;
+}
+
+.body-description-detail::before {
+  content: "";
+  display: block;
+  margin-top: 25px;
 }
 
 .body-description-price {
@@ -87,7 +105,7 @@ body {
 }
 
 .body-description-price .price-text {
-  font-family: 'BMJUA';
+  font-family: 'GothicA1-Regular';
   font-weight: 900;
   font-size: 1.8em;
   margin-bottom: 1.5rem;
@@ -95,7 +113,7 @@ body {
 
 .amount {
   display: inline;
-  color: #0077FF;
+  color: #88898d;
 }
 
 .body-description-caution {
@@ -109,11 +127,12 @@ body {
 }
 
 .open-modal.order-button-div .order-button {
-  font-family: 'BMJUA';
+  font-family: 'GothicA1-Regular';
   border: none;
   font-size: 2em;
   width: 10em;
-  background-color: rgba(0, 119, 255, 0.7);
+  background-color: #181818;
+  border-radius: unset;
 }
 
 
@@ -134,8 +153,8 @@ body {
 .flower-image {
   width: 100%;
   height: 100%;
-  border-radius: 5px;
 }
+
 
 /*--------------------
     Footer Section
@@ -304,11 +323,14 @@ body {
   .flower-image-container {
     padding: 2em 7em;
   }
+  .header-main-title {
+    font-size: 3.5em;
+  }
 }
 
 @media only screen and (max-width: 730px) {
   .header-main-title {
-    font-size: 4em;
+    font-size: 3em;
   }
 
   .header-body-text {
@@ -340,12 +362,30 @@ body {
   .flower-image-container {
     padding: 2em;
   }
+
+  .body-description-title {
+    text-align: left;
+    font-size: 1.2rem;
+    margin-left: 0.8em;
+  }
+
+  .body-description-main-title {
+    text-align: left;
+    font-size: 2rem;
+    margin-top: -0.2em;
+    margin-left: 0.3em;
+    color: #181818;
+  }
 }
 
 @media only screen and (max-width: 575px) {
   .order-request-form .order-request-form-title,
   .order-main-component .contact-request-form-ttile {
     font-size: 1.6em;
+  }
+
+  .header-main-title {
+    font-size: 2.5em;
   }
 
   .order-sub-main-container,
@@ -366,7 +406,7 @@ body {
   }
 
   .header-main-title {
-    font-size: 3em;
+    font-size: 2.5em;
     /* padding-top: 20vh; */
   }
 
@@ -396,7 +436,7 @@ body {
 
   .open-modal.order-button-div .order-button {
     font-size: 1.5em;
-    width: 7em;
+    width: 100%;
   }
 
   .flower-image-container {
@@ -438,6 +478,40 @@ body {
   .header-main-title .second-title {
     display: block;
   }
+
+  .first-title {
+    display: block;
+  }
+
+  .body-description-title {
+    text-align: left;
+    font-size: 1.2rem;
+    margin-left: 0.8em;
+  }
+
+  .body-description-main-title {
+    text-align: left;
+    font-size: 2rem;
+    margin-top: -0.2em;
+    margin-left: 0.3em;
+    color: #181818;
+  }
+
+  .body-description-price {
+    font-size: 1.3em;
+    text-align: right;
+    margin-left: 0.7em;
+  }
+
+  .body-description-price .price-text {
+    font-size: 1em;
+  }
+
+  .amount {
+    display: inline;
+    color: #88898d;
+    font-size: 0.8em;
+  }
 }
 
 @media only screen and (max-width: 360px) {
@@ -447,8 +521,7 @@ body {
   }
 
   .header-main-title {
-    font-size: 2.5em;
-    padding-top: 20vh;
+    font-size: 2em;
   }
 
   .header-body-text {
