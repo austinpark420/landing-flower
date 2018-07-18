@@ -4,9 +4,10 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 
-import App from './App';
+import { makeMainRoutes } from './routes';
 import reducer from './ducks/reducer';
 
+const routes = makeMainRoutes();
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const enhancer = composeEnhancers(applyMiddleware(thunk));
 const store = createStore(reducer, enhancer);
@@ -14,7 +15,7 @@ const rootEl = document.getElementById('root');
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    {routes}
   </Provider>,
   rootEl
 );

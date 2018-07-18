@@ -14,7 +14,7 @@
 
 body {
   font-family: 'AppleGothic', 'BMJUA', sans-serif;
-  color: #fff;
+  color: #181818;
   min-width: 320px;
 }
 
@@ -61,6 +61,26 @@ body {
 
 .first-title, .second-title{
     color: #88898d;
+  }
+
+.login {
+    padding: 2% 3%;
+    position: absolute;
+    top: 1%;
+    left: 1%;
+    background-color: #f2f2f2;
+    border: 0;
+    color: #181818;
+  }
+
+.logout {
+    padding: 2% 3%;
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    background-color: #f2f2f2;
+    border: 0;
+    color: #181818;
   }
 
 /*--------------------
@@ -128,10 +148,11 @@ body {
 
 .open-modal.order-button-div .order-button {
   font-family: 'GothicA1-Regular';
-  border: none;
   font-size: 2em;
+  color: #181818;
+  border: none;
   width: 10em;
-  background-color: #181818;
+  background-color: #f2f2f2;
   border-radius: unset;
 }
 
@@ -217,7 +238,7 @@ body {
     Order Section
 --------------------*/
 .order-main-component {
-  background: #292827;
+  background: #f2f2f2;
   padding: 2rem;
   border-radius: 5px;
 }
@@ -229,15 +250,18 @@ body {
 }
 
 .order-label {
+  color: #181818;
   display: block;
 }
 
 .order-field-form {
   width: 100%;
+  border: 1px solid #ced4da;
   border-radius: 5px;
 }
 
 .order-request-form .order-request-form-title {
+  color: #181818;
   font-size: 2.2em;
   text-align: center;
   margin-bottom: 1em;
@@ -255,7 +279,7 @@ body {
 }
 
 .order-request-form .ui.divider {
-  border: 1px inset grey;
+  border: 0.5px inset #ced4da;
   margin: 1rem auto 2rem !important;
 }
 
@@ -307,6 +331,7 @@ body {
 
 .contact-us-field-form {
   width: 100%;
+  border: 1px solid #88898d;
   border-radius: 5px;
 }
 
@@ -381,6 +406,7 @@ body {
 @media only screen and (max-width: 575px) {
   .order-request-form .order-request-form-title,
   .order-main-component .contact-request-form-ttile {
+    color: #181818;
     font-size: 1.6em;
   }
 
@@ -449,11 +475,13 @@ body {
 
   .order-request-form .order-request-form-title,
   .order-main-component .contact-request-form-ttile {
+    color: #181818;
     font-size: 1.3em;
   }
 
   .order-label,
   .contact-us-label {
+    color: #181818;
     font-size: 0.9em;
   }
 
@@ -519,6 +547,7 @@ body {
   .order-main-component,
   .order-info-main-component {
     margin: 1em;
+    color: #181818;
   }
 
   .header-main-title {

@@ -54,10 +54,10 @@ export function submitOrderFailure() {
   };
 }
 
-export function sendOrderForm({ username, email, phoneNumber, receiverName, receiverPhoneNumber, receiverAddress, message }) {
+export function sendOrderForm({ username, email, phoneNumber, receiverName, receiverPhoneNumber, receiverAddress, receiverDate, message }) {
   const url = 'https://hooks.slack.com/services/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';
   const data = {
-    text: `보내는 사람 이름: ${username}\n보내는 사람 이메일: ${email}\n보내는 사람 전화번호: ${phoneNumber}\n받는 사람 이름: ${receiverName}\n받는 사람 전화번호: ${receiverPhoneNumber}\n받는 사람 주소: ${receiverAddress}\n카드 메세지: ${message}`
+    text: `보내는 사람 이름: ${username}\n보내는 사람 이메일: ${email}\n보내는 사람 전화번호: ${phoneNumber}\n받는 사람 이름: ${receiverName}\n받는 사람 전화번호: ${receiverPhoneNumber}\n받는 사람 주소: ${receiverAddress}\n배송 날짜: ${receiverDate}\n카드 메세지: ${message}`
   };
 
   return dispatch =>
