@@ -49,14 +49,13 @@ class Header extends Component {
           </Button>)
         }
         <div className="header-main-title">
-          <span className="first-title">오늘도 </span>
-          <span className="second-title">바쁘신가요?</span>
+          <span className="first-title">오늘 하루는 </span>
+          <span className="second-title">어떤가요?</span>
         </div>
         <div className="header-body-text">
-          <div>자꾸만 미루지 말고 바로 오늘</div>
+          <div>오늘 같은 날 사랑하는 사람에게</div>
           <div>
-            <span>사랑하는 사람에게 마음을 </span>
-            <span className="last-body-text">전달하세요</span>
+            <span className="last-body-text">마음을 전하세요</span>
           </div>
         </div>
       </Jumbotron>

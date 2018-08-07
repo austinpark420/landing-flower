@@ -32,19 +32,18 @@ body {
   text-align: center;
 }
 
-.header-main-component:after {
+.header-main-component::after {
   background: url('./img/main_ground2.jpeg') no-repeat;
   background-size: cover;
   background-position: center;
   content: '';
-  height: 600px;
+  height: 70vh;
   position: absolute;
   top: 0;
   bottom: 0;
   right: 0;
   left: 0;
   z-index: -1;
-
 }
 
 .header-main-title {
@@ -211,7 +210,6 @@ body {
 --------------------*/
 .ReactModal__Body--open {
   overflow: hidden;
-  /* margin-right: 15px; */
 }
 
 #react-modal-window-inner-container {
@@ -389,13 +387,11 @@ body {
   }
 
   .body-description-title {
-    text-align: left;
     font-size: 1.2rem;
     margin-left: 0.8em;
   }
 
   .body-description-main-title {
-    text-align: left;
     font-size: 2rem;
     margin-top: -0.2em;
     margin-left: 0.3em;
@@ -433,7 +429,6 @@ body {
 
   .header-main-title {
     font-size: 2.5em;
-    /* padding-top: 20vh; */
   }
 
   .header-body-text {
@@ -508,7 +503,6 @@ body {
   }
 
   .first-title {
-    margin-top: 90px;
     display: block;
   }
 
