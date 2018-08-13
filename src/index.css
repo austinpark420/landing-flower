@@ -193,16 +193,22 @@ body {
 
 .contact-info .item {
   margin-right: 1em;
+  color: #f2f2f2;
 }
 
 .contact-info .contact-us-button {
   cursor: pointer;
   text-decoration: underline;
   margin-left: 1em;
+  color: #f2f2f2;
+}
+
+.contact-info .contact-email {
+  color: #f2f2f2;
 }
 
 .contact-info .contact-us-button:hover {
-  font-size: 1.1rem;
+  color: #88898d;
 }
 
 /*--------------------
